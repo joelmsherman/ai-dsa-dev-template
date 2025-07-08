@@ -1,82 +1,101 @@
-# AI App Dev Template
+# Data Science & Analytics Project Template
 
-This template repository provides a structured template for developing AI-powered applications, with a focus on clear requirements, robust task management, and best practices for code quality and collaboration. It is designed for teams or individuals building AI applications who want a repeatable, high-quality workflow from idea to implementation. 
+This template repository provides a structured approach for developing data science and analytics projects using Jupyter notebooks. It focuses on clear documentation, reproducible analysis, and best practices for data science workflows.
 
-## Claude Code-Ready
+## AI Assistant Ready
 
-The template is designed to work seamlessly with Claude Code slash commands for automated PRD and task generation, feature management, and workflow automation. However, all processes and conventions can be used with GitHub Copilot, Cursor, or other agentic AI coding assistants, even if you do not use Claude Code.
+The template is designed to work seamlessly with various AI coding assistants (like GitHub Copilot, Claude, or others) to help develop and document data science analyses. The structured workflow ensures consistency and quality across your analytics projects.
 
 ## Key Features
 
-- **Feature-Driven Development:**  
-Use the `/features` directory to specify new features as `[feature-name].md` files. Each feature is developed through a clear process, from initial specification to implementation.
+- **Notebook-Driven Development:**  
+  Use the `/notebooks` directory to create and organize Jupyter notebooks, with each notebook having a clear purpose documented in a corresponding markdown file.
 
-- **Automated PRD, Task Generation and Execution:**  
-The `.claude/commands` directory contains markdown-based automation rules for generating Product Requirements Documents (PRDs), detailed task lists, and task execution from feature specs, ensuring clarity and traceability.
+- **Automated Workflow:**  
+  The `.claude/commands/notebook_workflow.md` provides comprehensive guidance for notebook development, from initial planning to execution and documentation.
 
-- **Task List Management:**  
-Guidelines and protocols for managing and completing tasks are provided, including conventions for marking progress, running tests, and updating documentation. 
+- **Data Management:**  
+  Organized data handling with dedicated `/data` directory for source data and processed datasets.
 
-- **Coding Standards:**  
-The `CLAUDE.md` file outlines coding standards, security practices, and collaboration guidelines to ensure high-quality, maintainable code.
+- **Code Quality:**  
+  The `CLAUDE.md` file outlines coding standards, best practices, and guidelines specific to data science projects.
+
+- **Reusable Components:**  
+  The `/src` directory contains reusable Python modules and utility functions.
 
 - **Open Source License:**  
-Licensed under the MIT License (see `LICENSE`).
+  Licensed under the MIT License (see `LICENSE`).
 
 ## How to Use
-First, click the green button in the upper right corner of GitHub "Use this template" > "Create a new repository", then proceed:
 
-### 1. **Set up CLAUDE.md:**  
-If you're using Claude Code, update `CLAUDE.md` to fit the parameters of your project.  This is a good starting template through and should yield good results.
+1. **Create New Project:**  
+   Click "Use this template" > "Create new repository" on GitHub
 
-### 2. **Add a Feature:**  
-Create a new markdown file in `/features` , like `[feature-name].md` describing your feature. It helps to be as detailed as possible when describing the feature.  Include example coding snippets, and URLs to documentation along with why the URL is important for implementing the feature.
+2. **Set Up Environment:**  
+   - Create a virtual environment
+   - Install required packages from `requirements.txt`
+   - Configure Jupyter kernel
 
-### 3. **Generate PRD from Feature file:**  
-In Claude Code, run 
-```bash
-/create-prd [feature-name].md
-```
-In Cursor, Windsurf or VSCode AI chat windows, make sure `[feature-name].md` and `create-prd.md` are in the context window, and type
-```markdown
-Create a PRD for the feature described in [feature-name].md using instructions provided in create-prd.md 
-```
-### 4. **Generate Task List from PRD:**
-In Claude Code, run 
-```bash
-/generate-tasks [prd-feature-name].md
-```
-In Cursor, Windsurf or VSCode AI chat windows, make sure `[prd-feature-name].md` and `generate-tasks.md` are in the context window, and type
-```markdown
-Create a task list for the PRD described in [prd-feature-name].md using instructions provided in generate-tasks.md 
-```
-### 5. **Execute Task List and Track Progress:**  
-In Claude Code, run
-```bash
-/process-tasks [tasks-prd-feature-name].md
-```
-In Cursor, Windsurf or VSCode AI chat windows, make sure `[tasks-prd-feature-name].md` and `process-tasks.md` are in the context window, and type
-```markdown
-Execute tasks, starting with task 1.1, in [tasks-prd-feature-name].md using instructions provided in process-tasks.md 
-```
-The AI will execute blocks (parents) of tasks autonomously, and will check in with you once it completes a full parent task block.  If you'd like the AI to check in with you after each subtask (more human control), simply edit the `.claude\commands\process-tasks.md` file.
+3. **Start a New Analysis:**  
+   - Copy `notebooks/notebook_purpose.md` template
+   - Fill in analysis objectives and requirements
+   - Use AI assistant to help develop the notebook
+
+4. **Development Workflow:**  
+   In VS Code AI chat window, provide the notebook purpose file and notebook_workflow.md in context, then type:
+   ```markdown
+   Develop a notebook based on [notebook-name]_purpose.md using instructions in notebook_workflow.md
+   ```
 
 ## Directory Structure
 
-- `/features` — Feature specifications  
-- `/prds` — Product Requirements Documents (generated)  
-- `/tasks` — Task lists (generated)  
-- `.claude/commands` — Automation rules for Claude or other AI assistants  
-- `CLAUDE.md` — Coding and collaboration standards  
+- `/notebooks` — Jupyter notebooks and their purpose documentation
+- `/data` — Data files (raw and processed)
+- `/src` — Reusable Python modules and utilities
+- `.claude/commands` — AI assistant workflow guidance
+- `CLAUDE.md` — Coding and collaboration standards
 - `LICENSE` — MIT License
 
-## How to Contribute
+## Best Practices
 
-Contributions to this template are welcome! The most impactful way to contribute is by improving the context engineering files in `.claude/commands`, which define the automation and workflow logic for feature development:
+1. **Documentation:**
+   - Clear notebook purpose documentation
+   - Well-commented code
+   - Markdown cells explaining analysis steps
+   - Results interpretation
 
-- `create-prd.md` — Guides the generation of Product Requirements Documents from feature specs.
-- `generate-tasks.md` — Defines how to break down PRDs into actionable task lists.
-- `process-tasks.md` — Outlines the protocols for executing and tracking tasks.
+2. **Data Handling:**
+   - Raw data preservation
+   - Reproducible preprocessing
+   - Intermediate result storage
+   - Clear data versioning
+
+3. **Code Organization:**
+   - Modular functions in `/src`
+   - Clean, readable notebook cells
+   - Proper error handling
+   - Memory management
+
+4. **Version Control:**
+   - Clear commit messages
+   - Regular checkpoint commits
+   - `.gitignore` for data and outputs
+   - Notebook output cleaning before commits
+
+## Contributing
+
+Contributions to this template are welcome! To contribute:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your improvements
+4. Submit a pull request
+
+Focus areas for contribution:
+- Workflow improvements
+- New utility functions
+- Documentation enhancements
+- Best practice additions
 
 ### Pull Requests
 

@@ -1,38 +1,54 @@
-# Claude Rules
+# Data Science Development Guidelines
 Review this file at the start of every conversation.
 
 ## 1. Basic Rules
-- First think through the problem and read the codebase before you start writing code.
-- Make every task and code change you do as simple as possible.
-- The goal is one-pass implementation success through comprehensive context.
- 
+- First understand the analysis objectives and available data before starting any code.
+- Keep analysis steps clear, documented, and reproducible.
+- Focus on creating meaningful insights and visualizations.
+
 ## 2. Coding Standards
-- Use python as the primary language, where possible
-- Write clean, modular, and well-documented code.
-- Prefer readability and maintainability over cleverness.
-- Use descriptive variable and function names.
-- Follow best practices for the chosen language and framework.
+- Use Python as the primary language
+- Follow data science best practices and patterns
+- Write clean, efficient, and well-documented code
+- Use descriptive variable names that reflect the data they contain
+- Include markdown cells explaining analysis steps
 
-## 3. Feature Development
-- When adding new features, ensure they are loosely coupled and easy to test.
-- Provide clear docstrings or comments explaining the purpose and usage of new modules or functions.
-- If a feature requires configuration, document the necessary environment variables or settings.
+## 3. Data Handling
+- Always preserve raw data - never modify original data files
+- Document data cleaning and preprocessing steps
+- Handle missing data appropriately and document the approach
+- Implement proper data validation and quality checks
+- Consider memory usage with large datasets
 
-## 4. Security & Privacy
-- When you write code, check through it to make sure that it has no vulnerabilities that can be exploited
-- Do not hardcode sensitive information (API keys, passwords, etc.).
-- Follow security best practices for authentication, authorization, and data handling.
+## 4. Analysis Development
+- Start with exploratory data analysis (EDA)
+- Document assumptions and limitations
+- Include statistical justification for methods used
+- Create clear, informative visualizations
+- Save intermediate results when appropriate
 
-## 5. Collaboration
-- Write code that is easy for others to understand and extend.
-- Document any assumptions, limitations, or design decisions in code comments or in the README.
-- As you develop and commit code, you must ensure the README.md file adequately documents the repo for a general audience.
+## 5. Security & Privacy
+- Never commit sensitive data to the repository
+- Remove or mask any personally identifiable information (PII)
+- Use environment variables for sensitive configuration
+- Document any data access requirements or restrictions
 
-## 6. Testing
-- Include tests for new features where possible.
-- Prefer automated tests (unit, integration) to ensure reliability.
-- After updating any logic, check whether existing unit tests need to be updated. If so, do it.
+## 6. Collaboration
+- Write clear, comprehensive markdown documentation
+- Use consistent notebook structure and formatting
+- Document dependencies and environment setup
+- Make analyses reproducible by others
+- Keep notebook outputs clean in version control
 
-## 7. Dependencies
-- Use well-maintained, reputable libraries.
-- Document any new dependencies in the appropriate requirements or package files.
+## 7. Quality Assurance
+- Validate data transformations
+- Include sanity checks for calculations
+- Test critical functions in /src
+- Document edge cases and limitations
+- Include error handling for data processing
+
+## 8. Dependencies
+- Use standard data science libraries (pandas, numpy, scikit-learn, etc.)
+- Document all requirements in requirements.txt
+- Keep track of package versions for reproducibility
+- Prefer stable, well-maintained packages
