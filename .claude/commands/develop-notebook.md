@@ -1,18 +1,24 @@
-# Notebook Development Workflow
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Rule: Generate a Jupyter notebook from a detailed requirements file
 
 ## Goal
 
-To guide an AI assistant in developing and executing data science notebooks based on a notebook purpose specification. This workflow combines planning, development, and execution phases into a single streamlined process.
+To guide an AI assistant in planning, developing and executing data science notebooks in Jupyter, based on a user requirements file `notebook-name.md` specification in the `/requirements` directory.  The AI should run the plan for each cell in the notebook by the user before executing the code.  
 
 ## Process
 
-### 1. Analyze Purpose Document
-
-Read the notebook purpose document from the `/notebooks` directory.
+### 1. Receive and Analyze the Notebook Requirements
+Read the requirements file called $ARGUMENTS in the `/requirements` directory.
 
 ### 2. Ask Clarifying Questions
+Before planning and developing the notebook, the AI *must* ask clarifying questions to gather sufficient detail. The goal is to understand the "what" and "why" of the notebook, not necessarily the "how". Make sure to provide options in letter/number lists so I can respond easily with my selections.
 
-Before proceeding with development, ask clarifying questions about:
+#### Examples of clarifying questions
+The AI should adapt its questions based on the prompt, but here are some common areas to explore:
 
 - Data availability and format
 - Specific analysis techniques required
@@ -22,32 +28,30 @@ Before proceeding with development, ask clarifying questions about:
 - Output format requirements
 
 ### 3. Generate Development Plan
-
-Create a structured plan that includes:
+Based on the initial prompt and the user's answers to the clarifying questions, ULTRATHINK about the development plan. Consider:
 
 1. **Data Processing Steps**
-   - Data loading and validation
-   - Cleaning and preprocessing
-   - Feature engineering
+- Data loading and validation
+- Cleaning and preprocessing
+- Feature engineering
 
 2. **Analysis Components**
-   - Exploratory data analysis (EDA)
-   - Statistical analysis
-   - Model development (if applicable)
-   - Visualization creation
+- Exploratory data analysis (EDA)
+- Statistical analysis
+- Model development (if applicable)
+- Visualization creation
 
 3. **Output Generation**
-   - Results compilation
-   - Visualization formatting
-   - Documentation requirements
+- Results compilation
+- Visualization formatting
+- Documentation requirements
 
 4. **Quality Checks**
-   - Data validation steps
-   - Analysis validation
-   - Results verification
+- Data validation steps
+- Analysis validation
+- Results verification
 
 ### 4. Notebook Development
-
 Create or modify the Jupyter notebook following these guidelines:
 
 1. **Structure**

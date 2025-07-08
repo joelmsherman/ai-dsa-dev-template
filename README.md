@@ -2,17 +2,17 @@
 
 This template repository provides a structured approach for developing data science and analytics projects using Jupyter notebooks. It focuses on clear documentation, reproducible analysis, and best practices for data science workflows.
 
-## AI Assistant Ready
+## Claude Code-Ready
 
-The template is designed to work seamlessly with various AI coding assistants (like GitHub Copilot, Claude, or others) to help develop and document data science analyses. The structured workflow ensures consistency and quality across your analytics projects.
+The template is designed to work seamlessly with Claude Code slash commands for automated notebook creation. However, all processes and conventions can be used with GitHub Copilot, Cursor, or other agentic AI coding assistants, even if you do not use Claude Code.
 
 ## Key Features
 
 - **Notebook-Driven Development:**  
-  Use the `/notebooks` directory to create and organize Jupyter notebooks, with each notebook having a clear purpose documented in a corresponding markdown file.
+  Use the `/requirements` directory to specify new notebook requirements as `[notebook-name].md` files. Each notebook is developed through a clear process, from initial specification to implementation.
 
 - **Automated Workflow:**  
-  The `.claude/commands/notebook_workflow.md` provides comprehensive guidance for notebook development, from initial planning to execution and documentation.
+  The `.claude/commands/develop-notebook.md` provides comprehensive guidance for notebook development, from initial planning to execution and documentation.
 
 - **Data Management:**  
   Organized data handling with dedicated `/data` directory for source data and processed datasets.
@@ -27,25 +27,24 @@ The template is designed to work seamlessly with various AI coding assistants (l
   Licensed under the MIT License (see `LICENSE`).
 
 ## How to Use
+First, click the green button in the upper right corner of GitHub "Use this template" > "Create a new repository", then proceed:
 
-1. **Create New Project:**  
-   Click "Use this template" > "Create new repository" on GitHub
+### 1. **Set up CLAUDE.md:**  
+If you're using Claude Code, update `CLAUDE.md` to fit the parameters of your project.  This is a good starting template though and should yield good results.
 
-2. **Set Up Environment:**  
-   - Create a virtual environment
-   - Install required packages from `requirements.txt`
-   - Configure Jupyter kernel
+### 2. **Add a Notebook Requirement:**  
+Copy the template file `notebook-name.md` in `/requirements` , give it a name (like `your-notebook-name.md`), and input your requirements. It helps to be as detailed as possible when describing the objective and requirements of the notebook.  Include data sources, required libraries and other items suggested in the template file.
 
-3. **Start a New Analysis:**  
-   - Copy `notebooks/notebook_purpose.md` template
-   - Fill in analysis objectives and requirements
-   - Use AI assistant to help develop the notebook
-
-4. **Development Workflow:**  
-   In VS Code AI chat window, provide the notebook purpose file and notebook_workflow.md in context, then type:
-   ```markdown
-   Develop a notebook based on [notebook-name]_purpose.md using instructions in notebook_workflow.md
-   ```
+### 5. **Execute Task List and Track Progress:**  
+In Claude Code, run
+```bash
+/develop-notebook [your-notebook-name].md
+```
+In Cursor, Windsurf or VSCode AI chat windows, make sure `[your-notebook-name].md` and `develop-notebook.md` are in the context window, and type
+```markdown
+Develop a notebook based on [your-notebook-name].md using instructions in develop-notebook.md
+```
+The AI will execute blocks (parents) of tasks autonomously, and will check in with you once it completes a full parent task block.  If you'd like the AI to check in with you after each subtask (more human control), simply edit the `.claude\commands\process-tasks.md` file.
 
 ## Directory Structure
 
