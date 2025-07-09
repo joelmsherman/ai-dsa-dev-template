@@ -35,7 +35,7 @@ If you're using Claude Code, update `CLAUDE.md` to fit the parameters of your pr
 ### 2. **Add a Notebook Requirement:**  
 Copy the template file `notebook-name.md` in `/requirements` , give it a name (like `your-notebook-name.md`), and input your requirements. It helps to be as detailed as possible when describing the objective and requirements of the notebook.  Include data sources, required libraries and other items suggested in the template file.
 
-### 5. **Execute Task List and Track Progress:**  
+### 3. **Execute Task List and Track Progress:**  
 In Claude Code, run
 ```bash
 /develop-notebook [your-notebook-name].md
@@ -44,57 +44,23 @@ In Cursor, Windsurf or VSCode AI chat windows, make sure `[your-notebook-name].m
 ```markdown
 Develop a notebook based on [your-notebook-name].md using instructions in develop-notebook.md
 ```
-The AI will execute blocks (parents) of tasks autonomously, and will check in with you once it completes a full parent task block.  If you'd like the AI to check in with you after each subtask (more human control), simply edit the `.claude\commands\process-tasks.md` file.
 
 ## Directory Structure
 
-- `/notebooks` — Jupyter notebooks and their purpose documentation
-- `/data` — Data files (raw and processed)
-- `/src` — Reusable Python modules and utilities
 - `.claude/commands` — AI assistant workflow guidance
+- `/data` — Data files (raw and processed)
+- `/notebooks` — Jupyter notebooks and their purpose documentation
+- `/requirements` — Notebook requirement files
+- `/src` — Reusable Python modules and utilities
 - `CLAUDE.md` — Coding and collaboration standards
+- `dependencies.txt` — Codebase dependencies
 - `LICENSE` — MIT License
 
-## Best Practices
+## How to Contribute
 
-1. **Documentation:**
-   - Clear notebook purpose documentation
-   - Well-commented code
-   - Markdown cells explaining analysis steps
-   - Results interpretation
+Contributions to this template are welcome! The most impactful way to contribute is by improving the context engineering file in `.claude/commands`, which defines the automation and workflow logic for notebook development:
 
-2. **Data Handling:**
-   - Raw data preservation
-   - Reproducible preprocessing
-   - Intermediate result storage
-   - Clear data versioning
-
-3. **Code Organization:**
-   - Modular functions in `/src`
-   - Clean, readable notebook cells
-   - Proper error handling
-   - Memory management
-
-4. **Version Control:**
-   - Clear commit messages
-   - Regular checkpoint commits
-   - `.gitignore` for data and outputs
-   - Notebook output cleaning before commits
-
-## Contributing
-
-Contributions to this template are welcome! To contribute:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your improvements
-4. Submit a pull request
-
-Focus areas for contribution:
-- Workflow improvements
-- New utility functions
-- Documentation enhancements
-- Best practice additions
+- `develop-notebook.md` — Guides the planning and development of notebooks.
 
 ### Pull Requests
 
@@ -107,9 +73,3 @@ Focus areas for contribution:
 All contributions should maintain clarity, consistency, and be well-documented. If you are proposing a major change, please open an issue first to discuss what you would like to change.
 
 ## Acknowledgements
-
-Special thanks to the following individuals for their foundational ideas and inspiration:
-
-- [Ryan Carson](https://github.com/snarktank/ai-dev-tasks) — for the three-part context engineering concept.
-- [Cole Medin](https://github.com/coleam00/context-engineering-intro) — for ideas and examples on integrating Claude slash commands.
-- And others in the open source AI developer community who have contributed to the evolution of agentic workflows and context engineering.

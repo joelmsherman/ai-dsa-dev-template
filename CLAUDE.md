@@ -21,7 +21,7 @@ Review this file at the start of every conversation.
 - Consider memory usage with large datasets
 
 ## 4. Analysis Development
-- Start with exploratory data analysis (EDA)
+- Start with exploratory data analysis (EDA) if instructed
 - Document assumptions and limitations
 - Include statistical justification for methods used
 - Create clear, informative visualizations
@@ -49,6 +49,6 @@ Review this file at the start of every conversation.
 
 ## 8. Dependencies
 - Use standard data science libraries (pandas, numpy, scikit-learn, etc.)
-- Document all requirements in requirements.txt
+- Document all dependencies in dependencies.txt
 - Keep track of package versions for reproducibility
 - Prefer stable, well-maintained packages
